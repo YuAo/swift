@@ -171,6 +171,9 @@ namespace swift {
     /// Emit a remark after loading a module.
     bool EnableModuleLoadingRemarks = false;
 
+    /// Whether to serialize comments for SPI symbols.
+    bool EmitCommentsForSPISymbols = false;
+
     ///
     /// Support for alternate usage modes
     ///
