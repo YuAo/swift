@@ -718,6 +718,10 @@ static bool ParseLangArgs(LangOptions &Opts, ArgList &Args,
     Opts.AttachCommentsToDecls = true;
   }
 
+  if (FrontendOpts.IncludeSPISymbolsInSymbolGraph) {
+    Opts.EmitCommentsForSPISymbols = true;
+  }
+
   // If we're parsing SIL, access control doesn't make sense to enforce.
   if (Args.hasArg(OPT_parse_sil) ||
       FrontendOpts.InputsAndOutputs.shouldTreatAsSIL()) {

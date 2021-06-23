@@ -342,7 +342,7 @@ static bool shouldIncludeDecl(Decl *D, bool ExcludeDoubleUnderscore) {
   }
 
   // Skip SPI decls.
-  if (D->isSPI())
+  if (D->getASTContext().LangOpts.EmitCommentsForSPISymbols && D->isSPI())
     return false;
 
   if (auto *ED = dyn_cast<ExtensionDecl>(D)) {
